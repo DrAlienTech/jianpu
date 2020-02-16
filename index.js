@@ -67,7 +67,7 @@ const mainMenuTemplate = [
             },
             {
                 label: 'Delete Files',
-                
+                click
             },
             {
                 label: "Quit",
