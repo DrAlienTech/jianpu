@@ -104,9 +104,6 @@ if (process.env.NODE_ENV !== 'production') {
     });
 }
 
-const electron = require('electron');
-const { ipcRenderer } = electron;
-
 const ul = document.querySelector('ul');
 
 function submitForm(e) {
