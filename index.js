@@ -68,7 +68,7 @@ const mainMenuTemplate = [
             {
                 label: 'Delete Files',
                 click() {
-                    mainWindow.webContents.send('item:clear', )
+                    mainWindow.webContents.send('item:clear')
                 }
             },
             {
