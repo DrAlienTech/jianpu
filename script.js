@@ -26,4 +26,4 @@ ul.addEventListener('dblclick', removeFile);
 
 function removeFile(e) {
     e.target.remove();
-}
+};
