@@ -26,7 +26,7 @@
             ul.appendChild(li);
         });
 
-        ipcRenderer.on('item:add', function (e, name) {
+        ipcRenderer.on('item:clear', function (e, name) {
             console.log(name);
             const li = document.createElement('li');
             const itemText = document.createTextNode(name);
