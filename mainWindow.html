@@ -15,29 +15,6 @@
     </body>
     
     <script>
-        const electron = require('electron');
-        const { ipcRenderer } = electron;
-
-        const ul = document.querySelector('ul');
-
-        ipcRenderer.on('item:add', function (e, name) {
-            console.log(name);
-            const li = document.createElement('li');
-            const itemText = document.createTextNode(name);
-            li.appendChild(itemText);
-            ul.appendChild(li);
-        });
-
-        ipcRenderer.on('item:clear', function (e, name) {
-            ul.innerHTML = "";
-        });
-
-        ul.addEventListener('dblclick', removeFile);
-
-        function removeFile (e) {
-            e.target.remove();
-            hello();
-        }
     </script>
 
 </html>
