@@ -2,7 +2,6 @@ const electron = require('electron');
 const { ipcRenderer } = electron;
 
 const ul = document.querySelector('ul');
-
 const form = document.querySelector('form');
 
 function submitForm(e) {
