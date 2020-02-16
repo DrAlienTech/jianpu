@@ -3,7 +3,6 @@ const { ipcRenderer } = electron;
 
 const ul = document.querySelector('ul');
 
-
 function submitForm(e) {
     e.preventDefault();
 
