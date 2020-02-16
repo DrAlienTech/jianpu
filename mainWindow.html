@@ -1,0 +1,30 @@
+<html>
+
+    <head>
+        <title>Jianpu</title>
+    </head>
+
+    <body>
+        <p>Hello!</p>
+
+        <ul>
+
+        </ul>
+    </body>
+    
+    <script>
+        const electron = require('electron');
+        const { ipcRenderer } = electron;
+
+        const ul = document.querySelector('ul');
+
+        ipcRenderer.on('item:add', function (e, name) {
+            console.log(name);
+            const li = document.createElement('li');
+            const itemText = document.createTextNode(name);
+            li.appendChild(itemText);
+            ul.appendChild(li);
+        });
+    </script>
+
+</html>

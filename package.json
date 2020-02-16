@@ -1,0 +1,14 @@
+{
+  "name": "jianpu",
+  "version": "1.0.0",
+  "description": "jianpu notation editor",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Rasmit Devkota",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^8.0.1"
+  }
+}
