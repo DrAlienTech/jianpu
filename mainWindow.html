@@ -43,7 +43,7 @@
                 return;
             }
 
-            fs.writeFile(filename, content, function (err) {
+            fs.writeFile(filename, content, (err) => {
                 if (err) {
                     console.log("Error: " + err.message);
                     return;
@@ -51,7 +51,7 @@
 
                 console.log("File succesfully created!");
             });
-            console.log(fil);
+            console.log(filename);
         });
     });
 </script>
