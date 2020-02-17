@@ -51,6 +51,18 @@
             }
         }, false);
 
+        document.getElementById('delete-file').addEventListener('click', function () {
+            var actualFilePath = document.getElementById("actual-file").value;
+
+            if (actualFilePath) {
+                deleteFile(actualFilePath);
+                document.getElementById("actual-file").value = "";
+                document.getElementById("content-editor").value = "";
+            } else {
+                alert("Please select a file first");
+            }
+        }, false);
+
         document.getElementById('create-new-file').addEventListener('click', function () {
             var content = document.getElementById("content-editor").value;
 
@@ -78,6 +90,22 @@
                 }
 
                 document.getElementById("content-editor").value = data;
+            });
+        }
+
+        function deleteFile(filepath) {
+            fs.exists(filepath, function (exists) {
+                if (exists) {
+                    fs.unlink(filepath, function (err) {
+                        if (err) {
+                            alert("An error ocurred updating the file" + err.message);
+                            console.log(err);
+                            return;
+                        }
+                    });
+                } else {
+                    alert("This file doesn't exist, cannot delete");
+                }
             });
         }
 
