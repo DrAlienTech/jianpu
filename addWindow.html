@@ -19,7 +19,8 @@
 
             dialog.showSaveDialog(function (filename) {
                 if (filename == undefined) {
-                    console.log("Button clicked, filename == undefined")
+                    console.log("Button clicked, filename == undefined");
+                    return;
                 }
             });
         });
