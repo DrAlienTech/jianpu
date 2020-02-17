@@ -5,39 +5,27 @@
     </head>
 
     <body>
-        <input type="button" id="newFile" value="New File">
+        <form>
+            <div>
+                <label>Enter File Name</label>
+
+                <input type="text" id="name" autofocus>
+            </div>
+
+            <button type="submit">Create File</button>
+        </form>
     </body>
 
     <script src="script.js"></script>
 
     <script>
         const fs = require('fs');
-        const { dialog } = require('electron').remote;
-
-        document.getElementById('newFile').addEventListener('click', function () {
-            let content = "This is the content";
-
-            dialog.showSaveDialog(function (filename) {
-                if (filename == undefined) {
-                    console.log("Button clicked, filename == undefined");
-                    return;
-                }
-
-                fs.writeFile(filename, content, function (err) {
-                    if (err) {
-                        console.log("Error: " + err.message);
-                        return;
-                    }
-
-                    alert("File succesfully created!");
-                });
-            });
-        }, false);
+        
     </script>
     
     <script>
-        // const form = document.querySelector('input');
-        // form.addEventListener('submit', submitForm);
+        const form = document.querySelector('form');
+        form.addEventListener('submit', submitForm);
     </script>
 
 </html>
