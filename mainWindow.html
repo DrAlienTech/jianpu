@@ -33,6 +33,7 @@
     const { dialog } = require('electron').remote;
 
     document.getElementById('newFile').addEventListener('click', function () {
+        console.log("hello")
         let content = "This is the content";
 
         dialog.showSaveDialog(function (filename) {
