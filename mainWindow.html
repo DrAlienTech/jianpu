@@ -93,22 +93,6 @@
             });
         }
 
-        function deleteFile(filepath) {
-            fs.exists(filepath, function (exists) {
-                if (exists) {
-                    fs.unlink(filepath, function (err) {
-                        if (err) {
-                            alert("An error ocurred updating the file" + err.message);
-                            console.log(err);
-                            return;
-                        }
-                    });
-                } else {
-                    alert("This file doesn't exist, cannot delete");
-                }
-            });
-        }
-
         function saveChanges(filepath, content) {
             fs.writeFile(filepath, content, function (err) {
                 if (err) {
