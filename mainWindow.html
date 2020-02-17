@@ -43,7 +43,7 @@
                 return;
             }
 
-            fs.writeFile(filename, content, function (err) {
+            fs.writeFile(filename, content, (err) {
                 if (err) {
                     console.log("Error: " + err.message);
                     return;
