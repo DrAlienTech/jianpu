@@ -105,7 +105,6 @@ if (process.env.NODE_ENV !== 'production') {
 };
 
 const fs = require('fs');
-const electron = require('electron');
 const { dialog } = require('electron').remote;
 
 document.getElementById('newFile').addEventListener('click', () => {
