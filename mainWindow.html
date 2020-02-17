@@ -30,39 +30,6 @@
         var dialog = remote.require('dialog');
         var fs = require('fs');
 
-        document.getElementById('select-file').addEventListener('click', function () {
-            dialog.showOpenDialog(function (fileNames) {
-                if (fileNames === undefined) {
-                    console.log("No file selected");
-                } else {
-                    document.getElementById("actual-file").value = fileNames[0];
-                    readFile(fileNames[0]);
-                }
-            });
-        }, false);
-
-        document.getElementById('save-changes').addEventListener('click', function () {
-            var actualFilePath = document.getElementById("actual-file").value;
-
-            if (actualFilePath) {
-                saveChanges(actualFilePath, document.getElementById('content-editor').value);
-            } else {
-                alert("Please select a file first");
-            }
-        }, false);
-
-        document.getElementById('delete-file').addEventListener('click', function () {
-            var actualFilePath = document.getElementById("actual-file").value;
-
-            if (actualFilePath) {
-                deleteFile(actualFilePath);
-                document.getElementById("actual-file").value = "";
-                document.getElementById("content-editor").value = "";
-            } else {
-                alert("Please select a file first");
-            }
-        }, false);
-
         document.getElementById('create-new-file').addEventListener('click', function () {
             var content = document.getElementById("content-editor").value;
 
