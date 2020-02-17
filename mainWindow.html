@@ -15,3 +15,47 @@
     <script src="script.js"></script>
 
 </html>
+
+<html>
+
+<head>
+    <title>Create New File</title>
+</head>
+
+<body>
+    <input type="button" id="newFile" value="New File">
+</body>
+
+<script src="script.js"></script>
+
+<script>
+    const fs = require('fs');
+    const { dialog } = require('electron').remote;
+
+    document.getElementById('newFile').addEventListener('click', function () {
+        let content = "This is the content";
+
+        dialog.showSaveDialog(function (filename) {
+            if (filename == undefined) {
+                console.log("Button clicked, filename == undefined");
+                return;
+            }
+
+            fs.writeFile(filename, content, function (err) {
+                if (err) {
+                    console.log("Error: " + err.message);
+                    return;
+                }
+
+                alert("File succesfully created!");
+            });
+        });
+    }, false);
+</script>
+
+<script>
+        // const form = document.querySelector('input');
+        // form.addEventListener('submit', submitForm);
+</script>
+
+</html>
