@@ -25,7 +25,8 @@
 
                 fs.writeFile(filename, content, function (err) {
                     if (err) {
-                        console.log("Error: " + err.message)
+                        console.log("Error: " + err.message);
+                        return;
                     }
                 })
             });
