@@ -2,6 +2,9 @@ const electron = require('electron');
 const url = require('url');
 const path = require('path');
 
+const fs = require('fs');
+const { dialog } = require('electron').remote;
+
 const { app, BrowserWindow, Menu, ipcMain } = electron;
 
 let mainWindow;
