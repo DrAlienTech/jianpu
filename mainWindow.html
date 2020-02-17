@@ -32,7 +32,7 @@
     const electron = require('electron');
     const fs = require('fs');
     var remote = require('remote'); // Load remote compnent that contains the dialog dependency
-        var dialog = remote.require('dialog'); // Load the dialogs component of the OS
+    var dialog = remote.require('dialog'); // Load the dialogs component of the OS
     const { dialog } = require('electron').remote;
 
     document.getElementById('newFile').addEventListener('click', () => {
