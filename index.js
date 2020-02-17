@@ -104,3 +104,27 @@ if (process.env.NODE_ENV !== 'production') {
     });
 };
 
+const fs = require('fs');
+const { dialog } = require('electron').remote;
+
+document.getElementById('newFile').addEventListener('click', () => {
+    console.log("hello");
+    let content = "This is the content";
+
+    dialog.showSaveDialog((filename) => {
+        if (filename === undefined) {
+            console.log("Button clicked, filename == undefined");
+            return;
+        }
+
+        fs.writeFile(filename, content, (err) => {
+            if (err) {
+                console.log("Error: " + err.message);
+                return;
+            }
+
+            console.log("File succesfully created!");
+        });
+        console.log(filename);
+    });
+});
