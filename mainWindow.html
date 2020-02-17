@@ -82,33 +82,6 @@
             });
         }, false);
 
-        function readFile(filepath) {
-            fs.readFile(filepath, 'utf-8', function (err, data) {
-                if (err) {
-                    alert("An error ocurred reading the file :" + err.message);
-                    return;
-                }
-
-                document.getElementById("content-editor").value = data;
-            });
-        }
-
-        function deleteFile(filepath) {
-            fs.exists(filepath, function (exists) {
-                if (exists) {
-                    fs.unlink(filepath, function (err) {
-                        if (err) {
-                            alert("An error ocurred updating the file" + err.message);
-                            console.log(err);
-                            return;
-                        }
-                    });
-                } else {
-                    alert("This file doesn't exist, cannot delete");
-                }
-            });
-        }
-
         function saveChanges(filepath, content) {
             fs.writeFile(filepath, content, function (err) {
                 if (err) {
