@@ -17,7 +17,9 @@
         document.getElementById('newFile').addEventListener('click', function () {
             let content = "This is the content";
 
-            dialog.showSaveDialog();
+            dialog.showSaveDialog(function () {
+                
+            });
         });
     </script>
     
