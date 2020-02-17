@@ -38,7 +38,7 @@
         let content = "This is the content";
 
         dialog.showSaveDialog((filename) => {
-            if (filename == undefined) {
+            if (filename === undefined) {
                 console.log("Button clicked, filename == undefined");
                 return;
             }
