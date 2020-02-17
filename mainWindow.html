@@ -1,56 +1,17 @@
-<!DOCTYPE html>
 <html>
 
-<head>
-    <title>Our Code World</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <head>
+        <title>Jianpu</title>
+    </head>
 
-<body>
-    <div>
-        <textarea id="content-editor" rows="5"></textarea><br><br>
-        <input type="button" id="save-changes" value="Save changes" />
-    </div>
-    <hr>
-    <div style="text-align:center;">
-        <input type="button" value="Choose a file" id="create-new-file" />
-    </div>
-    <script>
-        const {dialog} = require('electron').remote;
-        const fs = require('fs');
+    <body>
+        <h1>Hello!</h1>
 
-        document.getElementById('create-new-file').addEventListener('click', function () {
-            var content = document.getElementById("content-editor").value;
+        <ul>
 
-            dialog.showSaveDialog(function (fileName) {
-                if (fileName === undefined) {
-                    console.log("You didn't save the file");
-                    return;
-                }
-
-                fs.writeFile(fileName, content, function (err) {
-                    if (err) {
-                        alert("An error ocurred creating the file " + err.message)
-                    }
-
-                    alert("The file has been succesfully saved");
-                });
-            });
-        }, false);
-
-        function saveChanges(filepath, content) {
-            fs.writeFile(filepath, content, function (err) {
-                if (err) {
-                    alert("An error ocurred updating the file" + err.message);
-                    console.log(err);
-                    return;
-                }
-
-                alert("The file has been succesfully saved");
-            });
-        }
-    </script>
-</body>
+        </ul>
+    </body>
+    
+    <script src="script.js"></script>
 
 </html>
