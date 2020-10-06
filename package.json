@@ -12,7 +12,7 @@
   "author": "Rasmit Devkota",
   "license": "MIT",
   "dependencies": {
-    "electron": "^8.0.1",
+    "electron": "^8.5.1",
     "fresh": "^0.5.2",
     "fs": "0.0.1-security",
     "mime": "^2.4.4",
